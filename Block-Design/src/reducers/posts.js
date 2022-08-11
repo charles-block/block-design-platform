@@ -11,5 +11,3 @@ export default (posts = [], action) => {
             return posts;
     }
 }
-
-//testing changes
