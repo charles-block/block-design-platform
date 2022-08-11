@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Stack from 'react-bootstrap/Stack';
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 
 
@@ -32,19 +31,3 @@ function LeftNavBar() {
 };
 
 export default LeftNavBar;
-
-{/* <Stack gap={3}>
-            <div>Key Resources</div>
-            <div>General</div>
-            <div>Set-Up</div>
-            <div>Site Survey</div>
-            <div>Kick Off Call</div>
-            <div>DID & SOW</div>
-            <div>Design Session</div>
-            <div>Post Design Session</div>
-            <div>Design Approval</div>
-            <div>Build Manual</div>
-            <div>Kitchen Overview</div>
-            <div>Partnerships and Collaborations</div>
-            <div>Other Info</div>
-        </Stack> */}

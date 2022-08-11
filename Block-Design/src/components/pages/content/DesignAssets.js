@@ -2,8 +2,6 @@ import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { ArrowRight } from 'react-bootstrap-icons';
 
-import DesignerHandbook from '../../../images/block-designer-handbook.png';
-
 function DesignAssets() {
   return (
     <Container>
@@ -14,14 +12,6 @@ function DesignAssets() {
         <h4>Designer Handbook</h4>
         <ListGroup>
           <ListGroup.Item action target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1FPHeHdftzsQJXPrHu4qeSSFJMfiyfKTOUTgPyAph7qE/edit#">
-            {/* <div style={{
-                    backgroundImage: `url(${DesignerHandbook})`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    width: '10vw',
-                    height: '20vh'
-                }} /> */}
             Designer Handbook  <ArrowRight />
           </ListGroup.Item>
         </ListGroup>

@@ -55,17 +55,6 @@ export default Announcements;
 
 
 
-// <h1>{post._id}</h1>
-          // <Container key={post._id} item>
-          //   <Row>
-          //     <Col>
-          //         <AnnouncementCard post={post} />
-          //     </Col>
-          //   </Row>
-          // </Container>
-
-//!posts.length ? <Spinner animation="border" /> : (
-
 // return (
 //   !posts.length ? <Spinner animation="border" /> : (
 //     <Container>

@@ -10,20 +10,10 @@ function Home() {
         document.body.style.overflow = "hidden";
     }, []);
     return (
-
         <>
             <div style={{height: '100vh'}} >
             <Spline scene="https://prod.spline.design/ogoKKwI560Fpjc6Q/scene.splinecode" />
-            {/* <Spline scene="https://prod.spline.design/z-B8F6DibL0JmRo7/scene.splinecode" /> */}
             </div>
-            {/* <div style={{
-                backgroundImage: `url(${background})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                width: '100vw',
-                height: '100vh'
-            }} /> */}
         </>
     )
 };

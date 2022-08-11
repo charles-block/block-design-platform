@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import React from 'react';
-import Badge from 'react-bootstrap/Badge';
 
 import background from '../../../images/block-design-background.png';
 
@@ -13,9 +12,6 @@ function CurrentClientProjects() {
             <h2>
                 Current Client Projects
             </h2>
-            {/* <div>
-                <Badge bg="secondary">In Progress</Badge>{' '}
-            </div> */}
             <br />
             <div style={{ overflowY: 'scroll', overflowX: 'hidden', height: '78vh' }}>
                 <Row xs={1} md={2} className="g-4">
