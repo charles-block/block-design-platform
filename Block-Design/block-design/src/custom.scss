@@ -1,0 +1,27 @@
+$sidebar-bg-color: #ffffff;
+$sidebar-color: #888888;
+$sidebar-width: 230px;
+$highlight-color: #000000;
+$submenu-bg-color: #ffffff;
+
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+
+//change the theme
+// $theme-colors: (
+//     "primary": #000000,
+// );
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+
+:root {
+    --bs-body-font-family: 'IBM Plex Sans', sans-serif;
+    .list-group-item.active {
+        background-color: #000000;
+        border-color: #000000;
+    }
+}
