@@ -11,6 +11,19 @@ $submenu-bg-color: #ffffff;
 @import '~bootstrap/scss/bootstrap.scss';
 
 
+.ql-toolbar.ql-snow { 
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.ql-container {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+@import '~react-quill/dist/quill.snow.css';
+
+
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
 

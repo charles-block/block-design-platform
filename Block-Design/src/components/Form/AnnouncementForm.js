@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 import { createPost } from '../../actions/posts';
+
+
 
 const AnnouncementForm = () => {
     const [postData, setPostData] = useState({
@@ -11,7 +15,9 @@ const AnnouncementForm = () => {
         name: '',
         content: '',
         link: ''
-    })
+    });
+
+    const [contentValue, setContentValue] = useState('');
 
     const dispatch = useDispatch();
 
@@ -61,6 +67,8 @@ const AnnouncementForm = () => {
                     value={postData.content}
                     onChange={(e) => setPostData({ ...postData, content: e.target.value })}
                 />
+                {/* Adding ReactQuill */}
+                {/* <ReactQuill theme="snow" value={contentValue} onChange={setContentValue} /> */}
             </Form.Group>
 
             <Form.Group className="mb-3">
@@ -76,7 +84,12 @@ const AnnouncementForm = () => {
             <Button variant="dark" type="submit" onClick={handleSubmit} >
                 Submit
             </Button>
+
+            <br />
+            <br />
+            <hr />
         </Form>
+
     );
 }
 

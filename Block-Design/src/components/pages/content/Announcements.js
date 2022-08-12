@@ -3,8 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Stack from 'react-bootstrap/Stack';
 
 import Spinner from 'react-bootstrap/Spinner';
 
@@ -29,8 +27,9 @@ function Announcements() {
           </h2>
         </Col>
         <Col>
-        {!postAnnouncement ? <Button variant='dark' onClick={() => setPostAnnouncement(true)} >Add</Button> : <h1></h1>}
-        {postAnnouncement ? <Button variant='dark' onClick={() => setPostAnnouncement(false)} >Cancel</Button> : <h1></h1>}
+        {!postAnnouncement ? 
+          <Button variant='dark' onClick={() => setPostAnnouncement(true)} >Add</Button> : 
+          <Button variant='dark' onClick={() => setPostAnnouncement(false)} >Cancel</Button>}
         </Col>
       </Row>
       <div style={{ overflow: 'scroll', height: '78vh' }}>

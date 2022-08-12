@@ -24,12 +24,12 @@ const AnnouncementCard = props => {
                     </Button>
                     <br />
                     <br />
-                    <Button
+                    {/* <Button
                         variant="dark"
                         onClick={() => {}}
                     >
                         Edit
-                    </Button>
+                    </Button> */}
                 </Card.Body>
             </Card>
             <br />
