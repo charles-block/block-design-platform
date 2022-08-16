@@ -8,8 +8,9 @@ import 'react-quill/dist/quill.snow.css';
 import { createPost } from '../../actions/posts';
 
 
-
 const AnnouncementForm = () => {
+
+
     const [postData, setPostData] = useState({
         title: '',
         name: '',
@@ -17,21 +18,34 @@ const AnnouncementForm = () => {
         link: ''
     });
 
-    const [contentValue, setContentValue] = useState('');
-
     const dispatch = useDispatch();
+
+
+    const handleQuillEdit = (value) => {
+        setPostData((postData) => {
+          return {
+            ...postData,
+            content: value
+          }
+        })
+      }
 
     const handleSubmit = (e) => {
 
-        e.preventDefault(); //prevent refresh in browser
+        //prevent refresh in browser
+        e.preventDefault(); 
 
         dispatch(createPost(postData));
+
+        //clears form after submission
         setPostData({
             title: '',
             name: '',
             content: '',
             link: ''
         });
+
+    
     }
 
     return (
@@ -59,16 +73,13 @@ const AnnouncementForm = () => {
 
             <Form.Group className="mb-3">
                 <Form.Label>Content</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    placeholder="Add content here"
-                    rows={3}
-                    type="text"
-                    value={postData.content}
-                    onChange={(e) => setPostData({ ...postData, content: e.target.value })}
+                <ReactQuill 
+                    theme="snow" 
+                    placeholder={"Start posting something"} 
+                    value={postData.content} 
+                    // onChange={(e) => setPostData({ ...postData, content: e })} 
+                    onChange= { handleQuillEdit }
                 />
-                {/* Adding ReactQuill */}
-                {/* <ReactQuill theme="snow" value={contentValue} onChange={setContentValue} /> */}
             </Form.Group>
 
             <Form.Group className="mb-3">
@@ -78,6 +89,7 @@ const AnnouncementForm = () => {
                     type="text"
                     value={postData.link}
                     onChange={(e) => setPostData({ ...postData, link: e.target.value })}
+                   
                 />
             </Form.Group>
 
@@ -94,4 +106,4 @@ const AnnouncementForm = () => {
 }
 
 export default AnnouncementForm;
-
+               

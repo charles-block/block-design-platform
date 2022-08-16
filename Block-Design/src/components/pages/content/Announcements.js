@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 
 import Spinner from 'react-bootstrap/Spinner';
 
+import parse from 'html-react-parser';
+
 //retrieve data from global redux store
 import { useSelector } from 'react-redux';
 import AnnouncementForm from '../../Form/AnnouncementForm';
@@ -14,6 +16,7 @@ import AnnouncementCard from '../../BlockCard/AnnouncementCard';
 function Announcements() {
   const posts = useSelector((state) => state.posts); //access to whole global redux store. Check combineReducers -> posts.
 
+  
   console.log(posts);
   
   const [postAnnouncement, setPostAnnouncement] = useState(false);
@@ -40,7 +43,7 @@ function Announcements() {
             key={post._id}
             title={post.title}
             name={post.name}
-            content={post.content}
+            content={parse(post.content)}
             createdAt={post.createdAt}
             link={post.link}
           />
