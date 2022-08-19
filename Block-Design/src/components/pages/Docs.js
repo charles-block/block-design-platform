@@ -6,9 +6,9 @@ import Col from 'react-bootstrap/Col';
 import LeftNavBar from '../../navigation/LeftNavBar';
 import CurrentClientProjects from './content/CurrentClientProjects';
 import Announcements from './content/Announcements';
-import DesignAssets from './content/DesignAssets';
-import Overview from './content/Overview';
 import DesignStandards from './content/DesignStandards';
+import Overview from './content/Overview';
+import DesignTools from './content/DesignTools';
 import RevitTopics from './content/bim/RevitTopics';
 import RevitTutorial from './content/bim/RevitTutorial';
 import DataAnalysis from './content/Data Analysis';
@@ -29,10 +29,10 @@ function Docs() {
                         <Routes>
                             <Route path="current-client-projects" element={<CurrentClientProjects />} />
                             <Route path="announcements" element={<Announcements />} />
-                            <Route path="design-assets" element={<DesignAssets />} />
+                            <Route path="design-standards" element={<DesignStandards />} />
                             <Route path="/" element={<Overview />} />
                             <Route path="overview" element={<Overview />} />
-                            <Route path="design-standards" element={<DesignStandards />} />
+                            <Route path="design-tools" element={<DesignTools />} />
                             <Route path="revit-topics" element={<RevitTopics /> } />
                             <Route path="revit-tutorial" element={<RevitTutorial /> } />
                             <Route path="data-analysis" element={<DataAnalysis />} />

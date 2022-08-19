@@ -16,8 +16,8 @@ import AnnouncementCard from '../../BlockCard/AnnouncementCard';
 function Announcements() {
   const posts = useSelector((state) => state.posts); //access to whole global redux store. Check combineReducers -> posts.
 
-  
-  console.log(posts);
+  posts.sort().reverse()
+  //console.log(posts);
   
   const [postAnnouncement, setPostAnnouncement] = useState(false);
 

@@ -55,14 +55,14 @@ function Overview() {
                 </Col>
                 <Col xs={3}>
                     <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Design Assets</Card.Header>
+                        <Card.Header>/Design Standards</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
                             height: '15vh'
                         }}>
-                            <Link to="/docs/design-assets">
+                            <Link to="/docs/design-standards">
                                 <br />
                                 <FileEarmarkBinary size={30} color='black' />{''}
                                 <br />
@@ -73,14 +73,14 @@ function Overview() {
                 </Col>
                 <Col xs={3}>
                     <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Design Standards</Card.Header>
+                        <Card.Header>/Design Tools</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
                             height: '15vh'
                         }}>
-                            <Link to="/docs/design-standards">
+                            <Link to="/docs/design-tools">
                                 <br />
                                 <Command size={30} color='black' />
                                 <br />

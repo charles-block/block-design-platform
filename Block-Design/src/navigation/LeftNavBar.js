@@ -12,8 +12,8 @@ function LeftNavBar() {
                 <MenuItem>Overview<Link to="overview" /></MenuItem>
                 <MenuItem>Announcements<Link to="announcements" /></MenuItem>
                 <MenuItem>Current Client Projects<Link to="current-client-projects" /></MenuItem>
-                <MenuItem>Design Assets<Link to="design-assets" /></MenuItem>
                 <MenuItem>Design Standards<Link to="design-standards" /></MenuItem>
+                <MenuItem>Design Tools<Link to="design-tools" /></MenuItem>
                 <MenuItem>Surveys and Forms<Link to="survey-and-forms" /></MenuItem>
                 <SubMenu title="Initiatives">
                     <MenuItem>Collections + Looks<Link to="initiatives/collection-and-looks" /></MenuItem>

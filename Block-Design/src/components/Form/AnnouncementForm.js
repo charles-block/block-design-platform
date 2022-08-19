@@ -44,8 +44,6 @@ const AnnouncementForm = () => {
             content: '',
             link: ''
         });
-
-    
     }
 
     return (
