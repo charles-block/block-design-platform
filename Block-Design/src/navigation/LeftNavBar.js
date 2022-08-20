@@ -11,7 +11,7 @@ function LeftNavBar() {
             <Menu iconShape="square">
                 <MenuItem>Overview<Link to="overview" /></MenuItem>
                 <MenuItem>Announcements<Link to="announcements" /></MenuItem>
-                <MenuItem>Current Client Projects<Link to="current-client-projects" /></MenuItem>
+                <MenuItem>Client Projects<Link to="client-projects" /></MenuItem>
                 <MenuItem>Design Standards<Link to="design-standards" /></MenuItem>
                 <MenuItem>Design Tools<Link to="design-tools" /></MenuItem>
                 <MenuItem>Surveys and Forms<Link to="survey-and-forms" /></MenuItem>
@@ -24,7 +24,7 @@ function LeftNavBar() {
                     <MenuItem>Revit Topics<Link to="revit-topics" /></MenuItem>
                     <MenuItem>Revit Tutorial<Link to="revit-tutorial" /></MenuItem>
                 </SubMenu>
-                <MenuItem>Data Analysis<Link to="data-analysis" /></MenuItem>
+                {/* <MenuItem>Data Analysis<Link to="data-analysis" /></MenuItem> */}
             </Menu>
         </ProSidebar>
     )

@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import LeftNavBar from '../../navigation/LeftNavBar';
-import CurrentClientProjects from './content/CurrentClientProjects';
+import ClientProjects from './content/ClientProjects';
 import Announcements from './content/Announcements';
 import DesignStandards from './content/DesignStandards';
 import Overview from './content/Overview';
@@ -27,7 +27,7 @@ function Docs() {
                     <Col sm={3}><LeftNavBar /></Col>
                     <Col sm={9}>
                         <Routes>
-                            <Route path="current-client-projects" element={<CurrentClientProjects />} />
+                            <Route path="client-projects" element={<ClientProjects />} />
                             <Route path="announcements" element={<Announcements />} />
                             <Route path="design-standards" element={<DesignStandards />} />
                             <Route path="/" element={<Overview />} />

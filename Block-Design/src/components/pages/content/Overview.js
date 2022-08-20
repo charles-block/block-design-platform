@@ -37,14 +37,14 @@ function Overview() {
                 </Col>
                 <Col xs={3}>
                     <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Current Client Projects</Card.Header>
+                        <Card.Header>/Client Projects</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
                             height: '15vh'
                         }}>
-                            <Link to="/docs/current-client-projects">
+                            <Link to="/docs/client-projects">
                                 <br />
                                 <Person size={30} color='black' />
                                 <br />

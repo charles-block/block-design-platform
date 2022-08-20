@@ -19,6 +19,8 @@ app.use(cors());
 
 //define starting path for all the routes inside posts.js
 app.use('/posts', postRoutes);
+// //CONNECT TO NEW ROUTES
+// app.use('/posts', postRoutes);
 
 //https://www.mongodb.com/atlas/database
 

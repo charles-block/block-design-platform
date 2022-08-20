@@ -1,19 +1,36 @@
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import React from 'react';
+import Button from 'react-bootstrap/Button';
+
+import AnnouncementForm from '../../Form/AnnouncementForm';
 
 import background from '../../../images/block-design-background.png';
 
-function CurrentClientProjects() {
+function ClientProjects() {
+
+    const [postProjects, setPostProjects] = useState(false);
+
+
     return (
         <Container>
-            <h2>
-                Current Client Projects
-            </h2>
+            <Row>
+                <Col xs={12} md={10}>
+                    <h2>
+                        Client Projects
+                    </h2>
+                </Col>
+                <Col>
+                    {!postProjects ?
+                        <Button variant='dark' onClick={() => setPostProjects(true)} >Add</Button> :
+                        <Button variant='dark' onClick={() => setPostProjects(false)} >Cancel</Button>}
+                </Col>
+            </Row>
             <br />
             <div style={{ overflowY: 'scroll', overflowX: 'hidden', height: '78vh' }}>
+            {postProjects ? <AnnouncementForm /> : <h1></h1>}
                 <Row xs={1} md={2} className="g-4">
                     {Array.from({ length: 8 }).map((_, idx) => (
                         <Col>
@@ -36,4 +53,4 @@ function CurrentClientProjects() {
     );
 }
 
-export default CurrentClientProjects;
+export default ClientProjects;
