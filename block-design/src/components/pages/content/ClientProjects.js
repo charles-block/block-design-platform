@@ -5,11 +5,18 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 
-import AnnouncementForm from '../../Form/AnnouncementForm';
+import ClientProjectForm from '../../Form/ClientProjectForm';
 
 import background from '../../../images/block-design-background.png';
 
+//retrieve data from global redux store
+import { useSelector } from 'react-redux';
+
 function ClientProjects() {
+
+    const clientProjectPosts = useSelector((state) => state.clientProjectPosts);
+
+    console.log(clientProjectPosts);
 
     const [postProjects, setPostProjects] = useState(false);
 
@@ -30,7 +37,7 @@ function ClientProjects() {
             </Row>
             <br />
             <div style={{ overflowY: 'scroll', overflowX: 'hidden', height: '78vh' }}>
-            {postProjects ? <AnnouncementForm /> : <h1></h1>}
+            {postProjects ? <ClientProjectForm /> : <h1></h1>}
                 <Row xs={1} md={2} className="g-4">
                     {Array.from({ length: 8 }).map((_, idx) => (
                         <Col>

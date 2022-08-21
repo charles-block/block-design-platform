@@ -3,7 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useDispatch } from 'react-redux'; // dispatch an action
-import { getPosts } from './actions/posts';
+import { getPosts } from './actions/posts'; 
+import { getClientProjectPosts } from './actions/clientProjectPosts';
 import { Route, Routes } from 'react-router-dom';
 
 import TopNavBar from './navigation/TopNavBar';
@@ -17,6 +18,7 @@ function App() {
 
   useEffect(() => {
     dispatch( getPosts());
+    dispatch( getClientProjectPosts());
   }, [dispatch])
 
   return (

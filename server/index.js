@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 import postRoutes from './routes/posts.js';
+import clientProjectPostsRoutes from './routes/clientProjectPosts.js';
 
 //initialize app
 const app = express();
@@ -19,8 +20,7 @@ app.use(cors());
 
 //define starting path for all the routes inside posts.js
 app.use('/posts', postRoutes);
-// //CONNECT TO NEW ROUTES
-// app.use('/posts', postRoutes);
+app.use('/client-projects', clientProjectPostsRoutes);
 
 //https://www.mongodb.com/atlas/database
 
