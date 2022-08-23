@@ -5,7 +5,8 @@ const clientProjectPostsSchema = mongoose.Schema({
     designerName: String,
     clientName: String,
     content: String,
-    date: String
+    date: String,
+    selectedFile: String
 });
 
 const ClientProjectPostsMessage = mongoose.model('ClientProjectPostsMessage', clientProjectPostsSchema);
