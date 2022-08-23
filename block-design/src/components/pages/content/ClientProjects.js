@@ -4,8 +4,10 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import parse from 'html-react-parser';
 
 import ClientProjectForm from '../../Form/ClientProjectForm';
+import ClientProjectCard from '../../BlockCard/ClientProjectCard';
 
 import background from '../../../images/block-design-background.png';
 
@@ -16,7 +18,8 @@ function ClientProjects() {
 
     const clientProjectPosts = useSelector((state) => state.clientProjectPosts);
 
-    console.log(clientProjectPosts);
+    clientProjectPosts.sort().reverse()
+    // console.log(clientProjectPosts);
 
     const [postProjects, setPostProjects] = useState(false);
 
@@ -37,8 +40,19 @@ function ClientProjects() {
             </Row>
             <br />
             <div style={{ overflowY: 'scroll', overflowX: 'hidden', height: '78vh' }}>
-            {postProjects ? <ClientProjectForm /> : <h1></h1>}
-                <Row xs={1} md={2} className="g-4">
+                {postProjects ? <ClientProjectForm /> : <h1></h1>}
+                <br />
+                {clientProjectPosts.map((post) => (
+                    <ClientProjectCard
+                        key={post._id}
+                        title={post.title}
+                        designerName={post.designerName}
+                        clientName={post.clientName}
+                        content={parse(post.content)}
+                        date={post.date}
+                    />
+                ))}
+                {/* <Row xs={1} md={2} className="g-4">
                     {Array.from({ length: 8 }).map((_, idx) => (
                         <Col>
                             <Card border="dark" >
@@ -54,7 +68,7 @@ function ClientProjects() {
                             </Card>
                         </Col>
                     ))}
-                </Row>
+                </Row> */}
             </div>
         </Container>
     );
