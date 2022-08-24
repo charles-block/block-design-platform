@@ -14,3 +14,4 @@ const clientProjectUrl = 'http://localhost:5000/client-projects';
 export const fetchClientProjectPosts = () => axios.get(clientProjectUrl);
 
 export const createClientProjectPosts = (newClientProjectPost) => axios.post(clientProjectUrl, newClientProjectPost);
+

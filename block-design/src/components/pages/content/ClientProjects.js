@@ -42,16 +42,19 @@ function ClientProjects() {
             <div style={{ overflowY: 'scroll', overflowX: 'hidden', height: '78vh' }}>
                 {postProjects ? <ClientProjectForm /> : <h1></h1>}
                 <br />
-                {clientProjectPosts.map((post) => (
-                    <ClientProjectCard
-                        key={post._id}
-                        title={post.title}
-                        designerName={post.designerName}
-                        clientName={post.clientName}
-                        content={parse(post.content)}
-                        date={post.date}
-                    />
-                ))}
+                <Row xs={1} md={3} lg={3} className="g-2">
+                    {clientProjectPosts.map((post) => (
+                        <ClientProjectCard
+                            key={post._id}
+                            title={post.title}
+                            designerName={post.designerName}
+                            clientName={post.clientName}
+                            content={parse(post.content)}
+                            date={post.date}
+                        />
+
+                    ))}
+                </Row>
                 {/* <Row xs={1} md={2} className="g-4">
                     {Array.from({ length: 8 }).map((_, idx) => (
                         <Col>

@@ -17,7 +17,7 @@ function Announcements() {
   const posts = useSelector((state) => state.posts); //access to whole global redux store. Check combineReducers -> posts.
 
   posts.sort().reverse()
-  //console.log(posts);
+  console.log(posts);
   
   const [postAnnouncement, setPostAnnouncement] = useState(false);
 
