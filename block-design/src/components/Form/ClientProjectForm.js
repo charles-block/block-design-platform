@@ -5,8 +5,6 @@ import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-import FileBase from 'react-file-base64';
-
 import { createClientProjectPosts } from '../../actions/clientProjectPosts';
 
 const ClientProjectForm = () => {
@@ -17,8 +15,7 @@ const ClientProjectForm = () => {
         designerName: '',
         clientName: '',
         content: '',
-        date: '',
-        selectedFile: ''
+        date: ''
     });
 
 
@@ -47,8 +44,7 @@ const ClientProjectForm = () => {
             designerName: '',
             clientName: '',
             content: '',
-            date: '',
-            selectedFile: ''
+            date: ''
         });
     }
 
@@ -102,21 +98,14 @@ const ClientProjectForm = () => {
                     type="text"
                     value={clientProjectData.date}
                     onChange={(e) => setClientProjectData({ ...clientProjectData, date: e.target.value })}
+
                 />
             </Form.Group>
-
-            <FileBase 
-                type="file"
-                multiple={false}
-                onDone={({base64}) => setClientProjectData({ ...clientProjectData, selectedFile: base64 })}
-            />
-
-            <br />
-            <br />
 
             <Button variant="dark" type="submit" onClick={handleSubmit} >
                 Submit
             </Button>
+
             <br />
             <br />
             <hr />

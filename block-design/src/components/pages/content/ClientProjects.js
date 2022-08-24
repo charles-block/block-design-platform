@@ -50,7 +50,6 @@ function ClientProjects() {
                         clientName={post.clientName}
                         content={parse(post.content)}
                         date={post.date}
-                        selectedFile={post.selectedFile}
                     />
                 ))}
                 {/* <Row xs={1} md={2} className="g-4">
