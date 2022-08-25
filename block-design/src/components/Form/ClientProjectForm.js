@@ -6,6 +6,8 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 import { createClientProjectPosts } from '../../actions/clientProjectPosts';
+import FileBase from 'react-file-base64';
+
 
 const ClientProjectForm = () => {
 
@@ -15,7 +17,8 @@ const ClientProjectForm = () => {
         designerName: '',
         clientName: '',
         content: '',
-        date: ''
+        date: '',
+        selectedFile: ''
     });
 
 
@@ -44,7 +47,8 @@ const ClientProjectForm = () => {
             designerName: '',
             clientName: '',
             content: '',
-            date: ''
+            date: '',
+            selectedFile: ''
         });
     }
 
@@ -102,6 +106,14 @@ const ClientProjectForm = () => {
                 />
             </Form.Group>
 
+            <FileBase
+                type="file"
+                multiple={false}
+                onDone={({ base64 }) => setClientProjectData({ ...clientProjectData, selectedFile: base64 })}
+            />
+            <br />
+            <br />
+            
             <Button variant="dark" type="submit" onClick={handleSubmit} >
                 Submit
             </Button>

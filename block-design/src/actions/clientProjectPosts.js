@@ -7,7 +7,7 @@ export const getClientProjectPosts = () => async (dispatch) => {
     try {
         const { data } = await api.fetchClientProjectPosts();
 
-        dispatch({ type: 'FETCH_ALL', payload: data });
+        dispatch({ type: 'FETCH_CLIENT_PROJECT_POSTS', payload: data });
 
     } catch (error) {
         console.log(error.message)
@@ -22,7 +22,7 @@ export const createClientProjectPosts = (post) => async (dispatch) => {
     try {
         const { data } = await api.createClientProjectPosts(post);
 
-        dispatch({ type: 'CREATE', payload: data });
+        dispatch({ type: 'CREATE_CLIENT_PROJECT_POSTS', payload: data });
 
     } catch (error) {
         console.log(error)

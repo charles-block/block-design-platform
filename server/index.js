@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
 //define starting path for all the routes inside posts.js
+//posts is a prefix
 app.use('/posts', postRoutes);
 app.use('/client-projects', clientProjectPostsRoutes);
 

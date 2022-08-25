@@ -51,6 +51,7 @@ function ClientProjects() {
                             clientName={post.clientName}
                             content={parse(post.content)}
                             date={post.date}
+                            selectedFile={post.selectedFile}
                         />
 
                     ))}
