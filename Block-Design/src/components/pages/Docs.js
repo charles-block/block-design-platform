@@ -11,6 +11,7 @@ import Overview from './content/Overview';
 import DesignTools from './content/DesignTools';
 import RevitTopics from './content/bim/RevitTopics';
 import RevitTutorial from './content/bim/RevitTutorial';
+import RevitModels from './content/bim/RevitModels';
 import DataAnalysis from './content/Data Analysis';
 import SurveyAndForms from './content/SurveyAndForms';
 import CollectionAndLooks from './content/initiatives/CollectionAndLooks';
@@ -35,6 +36,7 @@ function Docs() {
                             <Route path="design-tools" element={<DesignTools />} />
                             <Route path="revit-topics" element={<RevitTopics /> } />
                             <Route path="revit-tutorial" element={<RevitTutorial /> } />
+                            <Route path="revit-models" element={<RevitModels /> } />
                             <Route path="data-analysis" element={<DataAnalysis />} />
                             <Route path="survey-and-forms" element={<SurveyAndForms />} />
                             <Route path="initiatives/collection-and-looks" element={<CollectionAndLooks />} />

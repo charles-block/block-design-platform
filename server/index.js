@@ -14,14 +14,18 @@ const app = express();
 
 
 //set up bodyParser to it could send requests properly
-app.use(bodyParser.json({limit: "30mb", extended: true})); //Send images 
-app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
+app.use(bodyParser.json({ limit: "30mb", extended: true })); //Send images 
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 //define starting path for all the routes inside posts.js
 //posts is a prefix
 app.use('/posts', postRoutes);
 app.use('/client-projects', clientProjectPostsRoutes);
+
+app.get('/', (req, res) => {
+    res.send('Hello to Design-Block-Platform API');
+})
 
 //https://www.mongodb.com/atlas/database
 
@@ -32,7 +36,7 @@ const CONNECTION_URL = 'mongodb+srv://block-design:JKKJKK333@cluster0.gzkip.mong
 const PORT = process.env.PORT || 5000;
 
 //connect to database
-mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((error) => console.log(error.message));
 

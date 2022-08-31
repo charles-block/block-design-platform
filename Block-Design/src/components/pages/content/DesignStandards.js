@@ -28,7 +28,7 @@ function DesignStandards() {
           <ListGroup.Item action target="_blank" rel="noopener noreferrer" href="https://www.blockrenovation.com/quiet-town/catalog">Block Quiet Town Catalog <ArrowRight /></ListGroup.Item>
         </ListGroup>
         <br />
-        <h4>Viatechnik Models</h4>
+        {/* <h4>Viatechnik Models</h4>
         <ListGroup>
           <ListGroup.Item action target="_blank" rel="noopener noreferrer" href="https://drive.google.com/drive/folders/1ZxsuVqMVYt9y9pucXLOVqFcW89zTsoD0">Viatechnik Revit Models <ArrowRight /></ListGroup.Item>
         </ListGroup>
@@ -41,7 +41,7 @@ function DesignStandards() {
         <h4>Zoning & Building Codes</h4>
         <ListGroup>
           <ListGroup.Item action target="_blank" rel="noopener noreferrer">Building Codes + Zoning (Coming soon) <ArrowRight /></ListGroup.Item>
-        </ListGroup>
+        </ListGroup> */}
       </div>
     </Container>
   );

@@ -34,8 +34,8 @@ export const createPost = async (req, res) => {
 //once you make a request, the request is going to be /posts/{id}
 
 export const updatePost = async (req, res) => {
-    const { id: _id } = req.params;
-    const post = req.body; //pass the whole updated post
+    const { id: _id } = req.params; //extract id from req.params; we can also rename properties with object destructuring
+    const post = req.body; //pass the whole updated post from the front end
 
     if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that id');
 

@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 //Specify what a post consists of
 const postSchema = mongoose.Schema({
+    key: String,
     title: String,
     name: String,
     content: String,

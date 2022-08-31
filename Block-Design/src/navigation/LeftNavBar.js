@@ -22,6 +22,7 @@ function LeftNavBar() {
                 </SubMenu>
                 <SubMenu title="BIM ">
                     <MenuItem>Revit Topics<Link to="revit-topics" /></MenuItem>
+                    <MenuItem>Revit Models<Link to="revit-models" /></MenuItem>
                     <MenuItem>Revit Tutorial<Link to="revit-tutorial" /></MenuItem>
                 </SubMenu>
                 {/* <MenuItem>Data Analysis<Link to="data-analysis" /></MenuItem> */}

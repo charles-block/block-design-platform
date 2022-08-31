@@ -66,7 +66,7 @@ const ClientProjectForm = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-                <Form.Label>Designer Name</Form.Label>
+                <Form.Label>Designer</Form.Label>
                 <Form.Control
                     placeholder="Enter your name"
                     type="text"
@@ -76,7 +76,7 @@ const ClientProjectForm = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-                <Form.Label>Client Name</Form.Label>
+                <Form.Label>Client</Form.Label>
                 <Form.Control
                     placeholder="Enter your name"
                     type="text"
@@ -113,7 +113,7 @@ const ClientProjectForm = () => {
             />
             <br />
             <br />
-            
+
             <Button variant="dark" type="submit" onClick={handleSubmit} >
                 Submit
             </Button>

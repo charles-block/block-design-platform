@@ -11,11 +11,9 @@ const ClientProjectCard = props => {
                 <Card.Img variant="top" src={props.selectedFile} />
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
-                    <Card.Text>{props.designerName}</Card.Text>
-                    <Card.Text>{props.clientName}</Card.Text>
+                    <Card.Text>Designer: {props.designerName}</Card.Text>
+                    <Card.Text>Client: {props.clientName}</Card.Text>
                     <Card.Text>{props.content}</Card.Text>
-                    <br />
-                    <br />
                 </Card.Body>
             </Card>
             <br />

@@ -4,7 +4,7 @@ import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 import moment from 'moment';
 
-const AnnouncementCard = props => {
+const AnnouncementCard = (props, {setCurrentId}) => {
     return (
         <div>
             <Card border="secondary"  >
@@ -24,12 +24,15 @@ const AnnouncementCard = props => {
                     </Button>
                     <br />
                     <br />
-                    {/* <Button
-                        variant="dark"
-                        onClick={() => {}}
+                    <Button
+                        variant="light"
+                        onClick={() => 
+                            // setCurrentId(props.key);
+                            console.log(props.key)
+                        }
                     >
-                        Edit
-                    </Button> */}
+                        Edit Announcement
+                    </Button>
                 </Card.Body>
             </Card>
             <br />

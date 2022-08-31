@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-import { createPost } from '../../actions/posts';
+import { createPost, updatePost } from '../../actions/posts';
 
 
-const AnnouncementForm = () => {
+const AnnouncementForm = ({ currentId, setCurrentId }) => {
 
 
     const [postData, setPostData] = useState({
@@ -18,24 +18,34 @@ const AnnouncementForm = () => {
         link: ''
     });
 
+    const post = useSelector((state) => currentId ? state.posts.find((post) => post._id === currentId) : null);
+
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        if(post) setPostData(post);
+    }, [post]);
+    //callback function, dependency array: under what changes would this function run
 
     const handleQuillEdit = (value) => {
         setPostData((postData) => {
-          return {
-            ...postData,
-            content: value
-          }
+            return {
+                ...postData,
+                content: value
+            }
         })
-      }
+    }
 
     const handleSubmit = (e) => {
 
         //prevent refresh in browser
-        e.preventDefault(); 
+        e.preventDefault();
 
-        dispatch(createPost(postData));
+        if (currentId) {
+            dispatch(updatePost(currentId, postData));
+        } else {
+            dispatch(createPost(postData));
+        }
 
         //clears form after submission
         setPostData({
@@ -71,12 +81,12 @@ const AnnouncementForm = () => {
 
             <Form.Group className="mb-3">
                 <Form.Label>Content</Form.Label>
-                <ReactQuill 
-                    theme="snow" 
-                    placeholder={"Start posting something"} 
-                    value={postData.content} 
+                <ReactQuill
+                    theme="snow"
+                    placeholder={"Start posting something"}
+                    value={postData.content}
                     // onChange={(e) => setPostData({ ...postData, content: e })} 
-                    onChange= { handleQuillEdit }
+                    onChange={handleQuillEdit}
                 />
             </Form.Group>
 
@@ -87,7 +97,7 @@ const AnnouncementForm = () => {
                     type="text"
                     value={postData.link}
                     onChange={(e) => setPostData({ ...postData, link: e.target.value })}
-                   
+
                 />
             </Form.Group>
 
@@ -104,4 +114,3 @@ const AnnouncementForm = () => {
 }
 
 export default AnnouncementForm;
-               

@@ -14,11 +14,13 @@ import AnnouncementForm from '../../Form/AnnouncementForm';
 import AnnouncementCard from '../../BlockCard/AnnouncementCard';
 
 function Announcements() {
+  const [currentId, setCurrentId] = useState(null);
   const posts = useSelector((state) => state.posts); //access to whole global redux store. Check combineReducers -> posts.
 
   posts.sort().reverse()
-  console.log(posts);
   
+  //console.log(posts);
+
   const [postAnnouncement, setPostAnnouncement] = useState(false);
 
   return (
@@ -30,13 +32,17 @@ function Announcements() {
           </h2>
         </Col>
         <Col>
-        {!postAnnouncement ? 
-          <Button variant='dark' onClick={() => setPostAnnouncement(true)} >Add</Button> : 
-          <Button variant='dark' onClick={() => setPostAnnouncement(false)} >Cancel</Button>}
+          {!postAnnouncement ?
+            <Button variant='dark' onClick={() => setPostAnnouncement(true)} >Add</Button> :
+            <Button variant='dark' onClick={() => setPostAnnouncement(false)} >Cancel</Button>}
         </Col>
       </Row>
       <div style={{ overflow: 'scroll', height: '78vh' }}>
-        {postAnnouncement ? <AnnouncementForm /> : <h1></h1>}
+        {postAnnouncement ?
+          <AnnouncementForm
+            currentId={currentId}
+            setCurrentId={setCurrentId}
+          /> : <h1></h1>}
         <br />
         {posts.map((post) => (
           <AnnouncementCard
@@ -46,6 +52,7 @@ function Announcements() {
             content={parse(post.content)}
             createdAt={post.createdAt}
             link={post.link}
+            setCurrentId={setCurrentId}
           />
         ))}
       </div>
