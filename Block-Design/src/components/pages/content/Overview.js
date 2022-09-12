@@ -18,8 +18,8 @@ function Overview() {
             {/* Row 1 ----------------------------------------------------------------------------*/}
             <Row xs={1} className="mb-3">
                 <Col xs={3}>
-                    <Card border="dark" style={{ width: '14rem' }} >
-                        <Card.Header>/Announcements</Card.Header>
+                    <Card border="dark" style={{ width: '16rem' }} >
+                        <Card.Header>Announcements</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -28,7 +28,7 @@ function Overview() {
                         }}>
                             <Link to="/docs/announcements">
                                 <br />
-                                <Megaphone size={30} color='black' />
+                                <Megaphone size={40} color='black' />
                                 <br />
                                 <br />
                             </Link>
@@ -36,8 +36,8 @@ function Overview() {
                     </Card>
                 </Col>
                 <Col xs={3}>
-                    <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Client Projects</Card.Header>
+                    <Card border="dark" style={{ width: '16rem' }}>
+                        <Card.Header>Client Projects</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -46,7 +46,7 @@ function Overview() {
                         }}>
                             <Link to="/docs/client-projects">
                                 <br />
-                                <Person size={30} color='black' />
+                                <Person size={40} color='black' />
                                 <br />
                                 <br />
                             </Link>
@@ -54,8 +54,8 @@ function Overview() {
                     </Card>
                 </Col>
                 <Col xs={3}>
-                    <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Design Standards</Card.Header>
+                    <Card border="dark" style={{ width: '16rem' }}>
+                        <Card.Header>Design Standards</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -64,7 +64,7 @@ function Overview() {
                         }}>
                             <Link to="/docs/design-standards">
                                 <br />
-                                <FileEarmarkBinary size={30} color='black' />{''}
+                                <FileEarmarkBinary size={40} color='black' />{''}
                                 <br />
                                 <br />
                             </Link>
@@ -72,8 +72,8 @@ function Overview() {
                     </Card>
                 </Col>
                 <Col xs={3}>
-                    <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Design Tools</Card.Header>
+                    <Card border="dark" style={{ width: '16rem' }}>
+                        <Card.Header>Design Tools</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -82,7 +82,7 @@ function Overview() {
                         }}>
                             <Link to="/docs/design-tools">
                                 <br />
-                                <Command size={30} color='black' />
+                                <Command size={40} color='black' />
                                 <br />
                                 <br />
                             </Link>
@@ -90,12 +90,12 @@ function Overview() {
                     </Card>
                 </Col>
             </Row>
-
+            
             {/* Row 2 ----------------------------------------------------------------------------*/}
             <Row xs={1} className="mb-3">
                 <Col xs={3}>
-                    <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Initiatives</Card.Header>
+                    <Card border="dark" style={{ width: '16rem' }}>
+                        <Card.Header>Initiatives</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -104,7 +104,7 @@ function Overview() {
                         }}>
                             <Link to="/docs/initiatives/collection-and-looks">
                                 <br />
-                                <Map size={30} color='black' />
+                                <Map size={40} color='black' />
                                 <br />
                                 <br />
                             </Link>
@@ -112,8 +112,8 @@ function Overview() {
                     </Card>
                 </Col>
                 <Col xs={3}>
-                    <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Revit Topics</Card.Header>
+                    <Card border="dark" style={{ width: '16rem' }}>
+                        <Card.Header>Revit Topics</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -122,7 +122,7 @@ function Overview() {
                         }}>
                             <Link to="/docs/revit-topics">
                                 <br />
-                                <CameraVideo size={30} color='black' />
+                                <CameraVideo size={40} color='black' />
                                 <br />
                                 <br />
                             </Link>
@@ -130,8 +130,8 @@ function Overview() {
                     </Card>
                 </Col>
                 <Col xs={3}>
-                    <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Data Analysis</Card.Header>
+                    <Card border="dark" style={{ width: '16rem' }}>
+                        <Card.Header>Data Analysis</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -140,7 +140,7 @@ function Overview() {
                         }}>
                             <Link to="/docs/data-analysis">
                                 <br />
-                                <BarChart size={30} color='black' />
+                                <BarChart size={40} color='black' />
                                 <br />
                                 <br />
                             </Link>
@@ -148,8 +148,8 @@ function Overview() {
                     </Card>
                 </Col>
                 <Col xs={3}>
-                    <Card border="dark" style={{ width: '14rem' }}>
-                        <Card.Header>/Survey and Forms</Card.Header>
+                    <Card border="dark" style={{ width: '16rem' }}>
+                        <Card.Header>Survey and Forms</Card.Header>
                         <Card.Body style={{
                             display: 'flex',
                             justifyContent: 'center',
@@ -158,7 +158,7 @@ function Overview() {
                         }}>
                             <Link to="/docs/survey-and-forms">
                                 <br />
-                                <InputCursorText size={30} color='black' />
+                                <InputCursorText size={40} color='black' />
                                 <br />
                                 <br />
                             </Link>

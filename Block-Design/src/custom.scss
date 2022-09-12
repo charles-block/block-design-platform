@@ -24,13 +24,24 @@ $submenu-bg-color: #ffffff;
 @import '~react-quill/dist/quill.snow.css';
 
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 
 :root {
-    --bs-body-font-family: 'IBM Plex Sans', sans-serif;
+    --bs-body-font-family: 'Questrial', sans-serif;
     .list-group-item.active {
         background-color: #000000;
         border-color: #000000;
     }
 }
+
+// @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+// :root {
+//     --bs-body-font-family: 'IBM Plex Sans', sans-serif;
+//     .list-group-item.active {
+//         background-color: #000000;
+//         border-color: #000000;
+//     }
+// }

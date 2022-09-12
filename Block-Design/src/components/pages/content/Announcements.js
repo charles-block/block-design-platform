@@ -3,6 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+import { Plus } from 'react-bootstrap-icons';
 
 import Spinner from 'react-bootstrap/Spinner';
 
@@ -18,47 +21,76 @@ function Announcements() {
   const posts = useSelector((state) => state.posts); //access to whole global redux store. Check combineReducers -> posts.
 
   posts.sort().reverse()
-  
+
   //console.log(posts);
+
+  //Modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const [postAnnouncement, setPostAnnouncement] = useState(false);
 
   return (
     <Container>
       <Row>
-        <Col xs={12} md={10}>
+        <Col xs={12} md={11}>
           <h2>
             Announcements
           </h2>
         </Col>
         <Col>
-          {!postAnnouncement ?
-            <Button variant='dark' onClick={() => setPostAnnouncement(true)} >Add</Button> :
-            <Button variant='dark' onClick={() => setPostAnnouncement(false)} >Cancel</Button>}
+        <Button variant='dark' onClick={handleShow} ><Plus size={20} color='white' /></Button>
+          {/* {!show ?
+            <Button variant='dark' onClick={handleShow} >Add</Button> : //setPostAnnouncement(true)
+            <Button variant='dark' onClick={() => setPostAnnouncement(false)} >Cancel</Button>} */}
         </Col>
       </Row>
-      <div style={{ overflow: 'scroll', height: '78vh' }}>
-        {postAnnouncement ?
-          <AnnouncementForm
-            currentId={currentId}
-            setCurrentId={setCurrentId}
-          /> : <h1></h1>}
+      <div style={{ overflow: 'scroll', height: '84vh' }}>
+        {show ?
+          <Modal size="lg" centered show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Add an announcement</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <AnnouncementForm
+                currentId={currentId}
+                setCurrentId={setCurrentId}
+              />
+            </Modal.Body>
+          </Modal>
+          : <h1></h1>}
         <br />
-        {posts.map((post) => (
-          <AnnouncementCard
-            key={post._id}
-            title={post.title}
-            name={post.name}
-            content={parse(post.content)}
-            createdAt={post.createdAt}
-            link={post.link}
-            setCurrentId={setCurrentId}
-          />
-        ))}
+        <Row xs={1} md={3} lg={3} className="g-2">
+          {posts.map((post) => (
+            <AnnouncementCard
+              key={post._id}
+              title={post.title}
+              name={post.name}
+              content={parse(post.content)}
+              createdAt={post.createdAt}
+              link={post.link}
+              setCurrentId={setCurrentId}
+            />
+          ))}</Row>
       </div>
     </Container>
   );
 }
+
+{/* <Row xs={1} md={3} lg={3} className="g-2">
+                    {clientProjectPosts.map((post) => (
+                        <ClientProjectCard
+                            key={post._id}
+                            title={post.title}
+                            designerName={post.designerName}
+                            clientName={post.clientName}
+                            content={parse(post.content)}
+                            date={post.date}
+                            selectedFile={post.selectedFile}
+                        />
+
+                    ))} */}
 
 export default Announcements;
 

@@ -1,14 +1,23 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 import moment from 'moment';
 
-const AnnouncementCard = (props, {setCurrentId}) => {
+import { Pen } from 'react-bootstrap-icons';
+
+const AnnouncementCard = (props, { setCurrentId }) => {
     return (
         <div>
             <Card border="secondary"  >
-                <Card.Header>Design Bi-Weekly</Card.Header>
+                <Card.Header>
+                    <Row>
+                        <Col xs={9} md={8}>Design Bi-Weekly</Col>
+                        <Col md={{ span: 1, offset: 2 }}><Button size="sm" variant="light"><Pen size={15} color='grey' /></Button></Col>
+                    </Row>
+                </Card.Header>
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text>{props.name}</Card.Text>
@@ -18,13 +27,12 @@ const AnnouncementCard = (props, {setCurrentId}) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         href={props.link}
-                        variant="dark"
+                        variant="secondary"
                     >
                         Link to presentation
                     </Button>
                     <br />
-                    <br />
-                    <Button
+                    {/* <Button
                         variant="light"
                         onClick={() => 
                             // setCurrentId(props.key);
@@ -32,7 +40,7 @@ const AnnouncementCard = (props, {setCurrentId}) => {
                         }
                     >
                         Edit Announcement
-                    </Button>
+                    </Button> */}
                 </Card.Body>
             </Card>
             <br />

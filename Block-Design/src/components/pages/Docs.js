@@ -25,8 +25,8 @@ function Docs() {
         <>
             <Container className='mt-4'>
                 <Row>
-                    <Col sm={3}><LeftNavBar /></Col>
-                    <Col sm={9}>
+                    <Col sm={2}><LeftNavBar /></Col>
+                    <Col sm={10}>
                         <Routes>
                             <Route path="client-projects" element={<ClientProjects />} />
                             <Route path="announcements" element={<Announcements />} />

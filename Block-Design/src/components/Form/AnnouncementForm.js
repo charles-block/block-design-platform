@@ -8,6 +8,7 @@ import 'react-quill/dist/quill.snow.css';
 import { createPost, updatePost } from '../../actions/posts';
 
 
+
 const AnnouncementForm = ({ currentId, setCurrentId }) => {
 
 
@@ -57,6 +58,7 @@ const AnnouncementForm = ({ currentId, setCurrentId }) => {
     }
 
     return (
+        
         <Form>
             <Form.Group className="mb-3">
                 <Form.Label>Title</Form.Label>
