@@ -21,13 +21,18 @@ function Announcements() {
   const [currentId, setCurrentId] = useState(null);
   const posts = useSelector((state) => state.posts); //access to whole global redux store. Check combineReducers -> posts.
 
-  posts.sort().reverse()
+  // posts.sort().reverse()
 
   //console.log(posts);
 
   //Modal
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+
+  //const handleClose = () => setShow(false);
+  const handleCloseHandler = () => {
+    setShow(false);
+    setCurrentId(null);
+  }
   const handleShow = () => setShow(true);
 
   const [postAnnouncement, setPostAnnouncement] = useState(false);
@@ -49,14 +54,15 @@ function Announcements() {
       </Row>
       <div style={{ overflow: 'scroll', height: '84vh' }}>
         {show ?
-          <Modal size="lg" centered show={show} onHide={handleClose}>
+          <Modal size="lg" centered show={show} onHide={handleCloseHandler}>
             <Modal.Header closeButton>
-              <Modal.Title>Add an announcement</Modal.Title>
+              <Modal.Title>{currentId ? 'Edit' : 'Add'} an announcement</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <AnnouncementForm
                 currentId={currentId}
                 setCurrentId={setCurrentId}
+                setShow={setShow}
               />
             </Modal.Body>
           </Modal>

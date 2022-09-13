@@ -1,6 +1,6 @@
 //create all handlers for our routes
 //extract function from routes
-
+import mongoose from 'mongoose';
 import PostMessage from "../models/postMessage.js";
 
 export const getPosts = async (req, res) => {

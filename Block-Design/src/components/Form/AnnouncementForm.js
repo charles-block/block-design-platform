@@ -9,7 +9,7 @@ import { createPost, updatePost } from '../../actions/posts';
 
 
 
-const AnnouncementForm = ({ currentId, setCurrentId, show }) => {
+const AnnouncementForm = (props) => {
 
 
     const [postData, setPostData] = useState({
@@ -19,7 +19,7 @@ const AnnouncementForm = ({ currentId, setCurrentId, show }) => {
         link: ''
     });
 
-    const post = useSelector((state) => currentId ? state.posts.find((post) => post._id === currentId) : null);
+    const post = useSelector((state) => props.currentId ? state.posts.find((post) => post._id === props.currentId) : null);
 
     const dispatch = useDispatch();
 
@@ -43,11 +43,16 @@ const AnnouncementForm = ({ currentId, setCurrentId, show }) => {
         //prevent refresh in browser
         e.preventDefault();
 
-        if (currentId) {
-            dispatch(updatePost(currentId, postData));
+        console.log(props.currentId);
+
+        if (props.currentId) {
+            dispatch(updatePost(props.currentId, postData));
         } else {
             dispatch(createPost(postData));
         }
+
+        props.setShow(false);
+        props.setCurrentId(null);
 
         //clears form after submission
         setPostData({
@@ -56,7 +61,10 @@ const AnnouncementForm = ({ currentId, setCurrentId, show }) => {
             content: '',
             link: ''
         });
+
     }
+
+    
 
     return (
         
