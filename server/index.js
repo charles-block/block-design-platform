@@ -2,13 +2,14 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 import postRoutes from './routes/posts.js';
 import clientProjectPostsRoutes from './routes/clientProjectPosts.js';
 
 //initialize app
 const app = express();
-
+dotenv.config();
 //use express middleware to connect this to our application
 
 
@@ -32,14 +33,12 @@ app.get('/', (req, res) => {
 //Store in env variable
 const CONNECTION_URL = 'mongodb+srv://block-design:JKKJKK333@cluster0.gzkip.mongodb.net/?retryWrites=true&w=majority';
 
-const host = '0.0.0.0';
 // hiroku will auto popuate env variabole called PORT
 const PORT = process.env.PORT || 5000;
 
 //connect to database
-mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => app.listen(PORT, host, () => console.log(`Server running on port: ${PORT}`)))
+mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((error) => console.log(error.message));
-
 
 
