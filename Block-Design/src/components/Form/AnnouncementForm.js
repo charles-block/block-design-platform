@@ -9,7 +9,7 @@ import { createPost, updatePost } from '../../actions/posts';
 
 
 
-const AnnouncementForm = ({ currentId, setCurrentId }) => {
+const AnnouncementForm = ({ currentId, setCurrentId, show }) => {
 
 
     const [postData, setPostData] = useState({
@@ -35,6 +35,7 @@ const AnnouncementForm = ({ currentId, setCurrentId }) => {
                 content: value
             }
         })
+        // props.setShow(false);
     }
 
     const handleSubmit = (e) => {

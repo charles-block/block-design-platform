@@ -8,14 +8,29 @@ import moment from 'moment';
 
 import { Pen } from 'react-bootstrap-icons';
 
-const AnnouncementCard = (props, { setCurrentId }) => {
+//() => setCurrentId(props._id)
+
+const AnnouncementCard = (props, { setCurrentId, setShow }) => {
+
+    const onPress = () => {
+        props.setShow('true');
+        props.setCurrentId(props._id);
+    }
+
     return (
         <div>
-            <Card border="secondary"  >
+            <Card border="secondary" key={props._id} > 
                 <Card.Header>
                     <Row>
                         <Col xs={9} md={8}>Design Bi-Weekly</Col>
-                        <Col md={{ span: 1, offset: 2 }}><Button size="sm" variant="light"><Pen size={15} color='grey' /></Button></Col>
+                        <Col md={{ span: 1, offset: 2 }}>
+                            <Button
+                                size="sm"
+                                variant="light"
+                                onClick={onPress}> 
+                                <Pen size={15} color='grey' />
+                            </Button>
+                        </Col> 
                     </Row>
                 </Card.Header>
                 <Card.Body>

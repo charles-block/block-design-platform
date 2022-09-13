@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/', getPosts );
 router.post('/', createPost );
-router.patch('/:id, updatePost'); //Updating existing documents; dynamic id
+router.patch('/:id', updatePost ); //Updating existing documents; dynamic id
 
 
 export default router;

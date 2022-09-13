@@ -17,6 +17,7 @@ import AnnouncementForm from '../../Form/AnnouncementForm';
 import AnnouncementCard from '../../BlockCard/AnnouncementCard';
 
 function Announcements() {
+  
   const [currentId, setCurrentId] = useState(null);
   const posts = useSelector((state) => state.posts); //access to whole global redux store. Check combineReducers -> posts.
 
@@ -64,13 +65,14 @@ function Announcements() {
         <Row xs={1} md={3} lg={3} className="g-2">
           {posts.map((post) => (
             <AnnouncementCard
-              key={post._id}
+              _id={post._id}
               title={post.title}
               name={post.name}
               content={parse(post.content)}
               createdAt={post.createdAt}
               link={post.link}
               setCurrentId={setCurrentId}
+              setShow={setShow}
             />
           ))}</Row>
       </div>
