@@ -8,12 +8,18 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import moment from 'moment';
 
+import { useDispatch } from 'react-redux';
+
+import { deletePost } from '../../actions/posts';
+
 import { Pen, ThreeDotsVertical } from 'react-bootstrap-icons';
 
 //() => setCurrentId(props._id)
 //md={{ span: 1, offset: 1 }}
 
 const AnnouncementCard = (props) => {
+
+    const dispatch = useDispatch();
 
     const onPress = () => {
         props.setShow('true');
@@ -37,7 +43,7 @@ const AnnouncementCard = (props) => {
                                 className="mt-2"
                             >
                                 <Dropdown.Item onClick={onPress}>Edit</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Delete</Dropdown.Item>
+                                <Dropdown.Item onClick={() => dispatch(deletePost(props._id))}>Delete</Dropdown.Item>
                             </DropdownButton>
                             {/* <Button
                                 size="sm"
