@@ -3,19 +3,40 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Pen } from 'react-bootstrap-icons';
 
 
 
 const ClientProjectCard = props => {
+
+    const onPress = () => {
+        props.setShow('true');
+        props.setCurrentId(props._id);
+    }
+
+
     return (
         <div>
-            <Card border="secondary"  >
+            <Card border="secondary" key={props._id} >
                 {/* <Card.Header>{props.date}</Card.Header> */}
                 <Card.Header>
-                    <Row>
-                        <Col xs={9} md={8}>{props.date}</Col>
-                        <Col md={{ span: 1, offset: 2 }}><Button size="sm" variant="light"><Pen size={15} color='grey' /></Button></Col>
+                    <Row className="align-items-center">
+                        <Col xs={9} md={10}>{props.date}</Col>
+                        <Col md={2}>
+                            <DropdownButton
+                                id="dropdown-button-dark-example2"
+                                variant="light"
+                                menuVariant="dark"
+                                title={<Pen size={15} color='grey' />}
+                                size="sm"
+                                className="mt-2"
+                            >
+                                <Dropdown.Item onClick={onPress}>Edit</Dropdown.Item>
+                                <Dropdown.Item onClick={() => {}}>Delete</Dropdown.Item>
+                            </DropdownButton>
+                        </Col>
                     </Row>
                 </Card.Header>
                 <Card.Img variant="top" src={props.selectedFile} style={styles.cardImage} />

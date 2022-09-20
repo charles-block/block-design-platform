@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const clientProjectPostsSchema = mongoose.Schema({
+    key: String,
     title: String,
     designerName: String,
     clientName: String,

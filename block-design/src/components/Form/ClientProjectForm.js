@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-import { createClientProjectPosts } from '../../actions/clientProjectPosts';
+import { createClientProjectPosts, updateClientProjectPosts } from '../../actions/clientProjectPosts';
 import FileBase from 'react-file-base64';
 
 
-const ClientProjectForm = () => {
+const ClientProjectForm = (props) => {
 
 
     const [clientProjectData, setClientProjectData] = useState({
@@ -21,9 +21,13 @@ const ClientProjectForm = () => {
         selectedFile: ''
     });
 
+    const post = useSelector((state) => props.currentId ? state.clientProjectPosts.find((clientProjectPost) => clientProjectPost._id === props.currentId) : null);
 
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        if(post) setClientProjectData(post);
+    }, [post]);
 
     const handleQuillEdit = (value) => {
         setClientProjectData((clientProjectData) => {
@@ -39,7 +43,16 @@ const ClientProjectForm = () => {
         //prevent refresh in browser
         e.preventDefault();
 
-        dispatch(createClientProjectPosts(clientProjectData));
+        console.log(props.currentId);
+
+        if (props.currentId) {
+            dispatch(updateClientProjectPosts(props.currentId, clientProjectData));
+        } else {
+            dispatch(createClientProjectPosts(clientProjectData));
+        }
+
+        props.setShow(false);
+        props.setCurrentId(null);
 
         //clears form after submission
         setClientProjectData({

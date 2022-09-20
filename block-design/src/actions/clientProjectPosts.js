@@ -29,3 +29,16 @@ export const createClientProjectPosts = (post) => async (dispatch) => {
     }
 
 }
+
+export const updateClientProjectPosts = (id, post) => async (dispatch) => {
+    try {
+        const { data } = await api.updateClientProjectPosts(id, post);
+
+        dispatch({ type: 'UPDATE_CLIENT_PROJECT_POSTS', payload: data });
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+

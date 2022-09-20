@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 
 import { deletePost } from '../../actions/posts';
 
-import { Pen, ThreeDotsVertical } from 'react-bootstrap-icons';
+import { Pen } from 'react-bootstrap-icons';
 
 //() => setCurrentId(props._id)
 //md={{ span: 1, offset: 1 }}
@@ -32,7 +32,6 @@ const AnnouncementCard = (props) => {
                 <Card.Header>
                     <Row className="align-items-center">
                         <Col xs={9} md={10}>Design Bi-Weekly</Col>
-
                         <Col md={2}>
                             <DropdownButton
                                 id="dropdown-button-dark-example2"
@@ -45,23 +44,7 @@ const AnnouncementCard = (props) => {
                                 <Dropdown.Item onClick={onPress}>Edit</Dropdown.Item>
                                 <Dropdown.Item onClick={() => dispatch(deletePost(props._id))}>Delete</Dropdown.Item>
                             </DropdownButton>
-                            {/* <Button
-                                size="sm"
-                                variant="light"
-                                onClick={onPress}>
-                                <Pen size={15} color='grey' />
-                            </Button> */}
                         </Col>
-
-
-                       
-                            {/* <Col md={2}><Button
-                            size="sm"
-                            variant="light"
-                            onClick={onPress}>
-                            <ThreeDotsVertical size={15} color='grey' />
-                        </Button>
-                        </Col> */}
                     </Row>
                 </Card.Header>
                 <Card.Body>
