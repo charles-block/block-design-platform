@@ -35,8 +35,6 @@ function Announcements() {
   }
   const handleShow = () => setShow(true);
 
-  const [postAnnouncement, setPostAnnouncement] = useState(false);
-
   return (
     <Container>
       <Row>
@@ -47,9 +45,6 @@ function Announcements() {
         </Col>
         <Col>
         <Button variant='dark' onClick={handleShow} ><Plus size={20} color='white' /></Button>
-          {/* {!show ?
-            <Button variant='dark' onClick={handleShow} >Add</Button> : //setPostAnnouncement(true)
-            <Button variant='dark' onClick={() => setPostAnnouncement(false)} >Cancel</Button>} */}
         </Col>
       </Row>
       <div style={{ overflow: 'scroll', height: '84vh' }}>
