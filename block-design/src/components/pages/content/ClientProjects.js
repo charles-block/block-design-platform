@@ -23,7 +23,8 @@ function ClientProjects() {
 
     const clientProjectPosts = useSelector((state) => state.clientProjectPosts);
 
-    clientProjectPosts.sort().reverse()
+   // clientProjectPosts.sort().reverse()
+   
     // console.log(clientProjectPosts);
 
     const [show, setShow] = useState(false);

@@ -7,9 +7,14 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Pen } from 'react-bootstrap-icons';
 
+import { useDispatch } from 'react-redux';
+
+import { deleteClientProjectPosts } from '../../actions/clientProjectPosts';
 
 
 const ClientProjectCard = props => {
+
+    const dispatch = useDispatch();
 
     const onPress = () => {
         props.setShow('true');
@@ -34,7 +39,7 @@ const ClientProjectCard = props => {
                                 className="mt-2"
                             >
                                 <Dropdown.Item onClick={onPress}>Edit</Dropdown.Item>
-                                <Dropdown.Item onClick={() => {}}>Delete</Dropdown.Item>
+                                <Dropdown.Item onClick={() => {dispatch(deleteClientProjectPosts(props._id))}}>Delete</Dropdown.Item>
                             </DropdownButton>
                         </Col>
                     </Row>

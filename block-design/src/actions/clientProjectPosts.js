@@ -42,3 +42,12 @@ export const updateClientProjectPosts = (id, post) => async (dispatch) => {
 }
 
 
+export const deleteClientProjectPosts = (id) => async (dispatch) => {
+    try {
+        await api.deleteClientProjectPosts(id);
+
+        dispatch( {type: 'DELETE_CLIENT_PROJECT_POSTS', payload: id});
+    } catch (error) {
+        console.log(error)
+    }
+}
